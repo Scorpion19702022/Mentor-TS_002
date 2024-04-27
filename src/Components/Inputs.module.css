@@ -26,4 +26,33 @@
 	padding: 2em;
 	margin-bottom: 2em;
 	background-color: var(--color-dark08);
+	border: 0.04em solid var(--color-blue07);
+}
+
+.box_inputs {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1em;
+}
+
+.inputs {
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+}
+
+.label {
+	font-size: 1.2em;
+	color: var(--color-blue03);
+	margin-bottom: 0.4em;
+}
+
+.input {
+	padding: 0.8em;
+	font-size: 1.4em;
+	background: none;
+	border: none;
+	border-bottom: 0.04em solid var(--color-blue05);
+	color: var(--color-blue05);
 }
