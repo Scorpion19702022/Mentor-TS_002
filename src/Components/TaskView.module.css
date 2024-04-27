@@ -20,11 +20,3 @@
 	--color-blue08: #005f7f;
 	--color-blue09: #00394c;
 }
-
-.box_result {
-	width: 75%;
-	padding: 2em;
-	background-color: var(--color-dark08);
-	height: 560px;
-	border: 0.04em solid var(--color-blue07);
-}
