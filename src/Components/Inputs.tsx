@@ -21,12 +21,18 @@ const Inputs: React.FC<InputProps> = ({ addToInput }) => {
 	}
 
 	return (
-		<div className={styles.box_inputs}>
-			<div className={styles.inputs}>
-				<label>Wpisz treść:</label>
-				<input type='text' value={content} onChange={e => setContent(e.target.value)} />
+		<div className={styles.wrapper}>
+			<div className={styles.box_iputs}>
+				<div className={styles.inputs}>
+					<label>Wpisz treść:</label>
+					<input type='text' value={content} onChange={e => setContent(e.target.value)} />
+				</div>
+				<div className={styles.btns}>
+					<button className={styles.btn} onClick={handleAddTask}>
+						dodaj
+					</button>
+				</div>
 			</div>
-			<button onClick={handleAddTask}>dodaj</button>
 		</div>
 	)
 }

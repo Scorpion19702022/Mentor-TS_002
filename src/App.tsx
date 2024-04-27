@@ -8,7 +8,9 @@ function App() {
 	const [tasks, setTasks] = useState<ToDoItem[]>([])
 
 	const addTasks = (task: ToDoItem) => {
-		setTasks([...tasks, task])
+		if (tasks.length < 8) {
+			setTasks([...tasks, task])
+		}
 	}
 
 	const handleDeleteTask = (id: string | number) => {
