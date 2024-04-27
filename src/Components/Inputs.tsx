@@ -8,6 +8,8 @@ import { InputProps, ToDoItem } from '../Types'
 const Inputs: React.FC<InputProps> = ({ addToInput }) => {
 	const [content, setContent] = useState('')
 
+	const [infoState, setInfoState] = useState('stan działania')
+
 	const handleAddTask = () => {
 		if (content !== '') {
 			const newTask: ToDoItem = {
@@ -16,6 +18,9 @@ const Inputs: React.FC<InputProps> = ({ addToInput }) => {
 				isComplete: false,
 			}
 			addToInput(newTask)
+			setInfoState('dodano prawidłowo')
+		} else if (content === '') {
+			setInfoState('musisz wpisać treść')
 		}
 
 		setContent('')
@@ -36,7 +41,7 @@ const Inputs: React.FC<InputProps> = ({ addToInput }) => {
 			</div>
 			<div className={styles.box_info}>
 				<h4 className={styles.info_state}>
-					Informacja o stanie: <span className={styles.span_info}></span>
+					Informacja o stanie: <span className={styles.span_info}>{infoState.toUpperCase()}</span>
 				</h4>
 				<h4 className={styles.info_length}>
 					Ilość zadań: <span className={styles.span_length}></span>

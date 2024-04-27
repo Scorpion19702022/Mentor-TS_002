@@ -79,3 +79,21 @@
 	background-color: var(--color-blue07);
 	color: var(--color-blue01);
 }
+
+.box_info {
+	display: flex;
+	justify-content: space-between;
+}
+
+.info_state,
+.info_length {
+	font-size: 1.6em;
+	color: var(--color-blue06);
+	font-weight: 100;
+}
+
+.span_info,
+.span_length {
+	font-weight: bold;
+	color: var(--color-blue04);
+}
