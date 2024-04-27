@@ -9,13 +9,14 @@ const Inputs: React.FC<InputProps> = ({ addToInput }) => {
 	const [content, setContent] = useState('')
 
 	const handleAddTask = () => {
-		const newTask: ToDoItem = {
-			id: uuidv4(),
-			task: content,
-			isComplete: false,
+		if (content !== '') {
+			const newTask: ToDoItem = {
+				id: uuidv4(),
+				task: content,
+				isComplete: false,
+			}
+			addToInput(newTask)
 		}
-
-		addToInput(newTask)
 
 		setContent('')
 	}
