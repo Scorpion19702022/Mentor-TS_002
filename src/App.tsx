@@ -7,6 +7,8 @@ import { ToDoItem } from './Types'
 function App() {
 	const [tasks, setTasks] = useState<ToDoItem[]>([])
 
+	// const [infoDelete, setInfoDelete] = useState<deleteInfo>()
+
 	const addTasks = (task: ToDoItem) => {
 		if (tasks.length < 10) {
 			setTasks([...tasks, task])
@@ -16,6 +18,9 @@ function App() {
 	const handleDeleteTask = (id: string | number) => {
 		const deleteTask = tasks.filter(item => item.id !== id)
 		setTasks(deleteTask)
+		// if (!deleteTask) {
+		// 	setInfoDelete()
+		// }
 	}
 
 	return (
