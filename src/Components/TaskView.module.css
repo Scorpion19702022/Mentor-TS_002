@@ -24,4 +24,26 @@
 .box_results {
 	display: flex;
 	justify-content: space-between;
+	padding-bottom: 0.6em;
+	margin-top: 0.6em;
+	border-bottom: 0.04em dotted var(--color-blue07);
+}
+
+.heading_result {
+	font-size: 1.4em;
+	color: var(--color-blue04);
+}
+
+.btn_result {
+	width: 10%;
+	padding: 0.2em;
+	background: none;
+	border: 0.04em solid var(--color-blue08);
+	color: var(--color-blue03);
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.btn_result:hover {
+	background-color: var(--color-blue08);
 }
