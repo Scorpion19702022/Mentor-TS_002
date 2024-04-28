@@ -7,7 +7,7 @@ import { ToDoItem } from './Types'
 function App() {
 	const [tasks, setTasks] = useState<ToDoItem[]>([])
 
-	const [infoDelete, setInfoDelete] = useState<string>('stan działania')
+	const [infoDelete, setInfoDelete] = useState<string>('')
 
 	const addTasks = (task: ToDoItem) => {
 		if (tasks.length < 10) {
@@ -25,7 +25,7 @@ function App() {
 
 	return (
 		<div className={styles.wrapper}>
-			<Inputs addToInput={addTasks} tasksLenght={tasks} infoDelete={infoDelete} />
+			<Inputs addToInput={addTasks} tasksLenght={tasks} infoDelete={infoDelete} deleteTask={handleDeleteTask} />
 			<Result addToResult={tasks} deleteTask={handleDeleteTask} />
 		</div>
 	)

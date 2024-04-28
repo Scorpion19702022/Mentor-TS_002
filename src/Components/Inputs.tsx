@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 import styles from './Inputs.module.css'
 import { InputProps, ToDoItem } from '../Types'
 
-const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) => {
+const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete, deleteTask }) => {
 	const [content, setContent] = useState('')
 
 	const [infoState, setInfoState] = useState('stan działania')
@@ -26,11 +26,10 @@ const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) =
 			setInfoState('dodano maksymalną ilość zadań')
 		}
 
-		if (tasksLenght.length < 10) {
-			setInfoState(infoDelete)
-		}
-
 		// setContent('')
+	}
+
+	if (deleteTask()) {
 	}
 
 	return (
