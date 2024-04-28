@@ -7,7 +7,7 @@ import { ToDoItem } from './Types'
 function App() {
 	const [tasks, setTasks] = useState<ToDoItem[]>([])
 
-	// const [infoDelete, setInfoDelete] = useState<deleteInfo>()
+	const [infoDelete, setInfoDelete] = useState<string>('stan działania')
 
 	const addTasks = (task: ToDoItem) => {
 		if (tasks.length < 10) {
@@ -18,14 +18,14 @@ function App() {
 	const handleDeleteTask = (id: string | number) => {
 		const deleteTask = tasks.filter(item => item.id !== id)
 		setTasks(deleteTask)
-		// if (!deleteTask) {
-		// 	setInfoDelete()
-		// }
+		if (!deleteTask) {
+			setInfoDelete('usunięto zadanie')
+		}
 	}
 
 	return (
 		<div className={styles.wrapper}>
-			<Inputs addToInput={addTasks} tasksLenght={tasks} />
+			<Inputs addToInput={addTasks} tasksLenght={tasks} infoDelete={infoDelete} />
 			<Result addToResult={tasks} deleteTask={handleDeleteTask} />
 		</div>
 	)
