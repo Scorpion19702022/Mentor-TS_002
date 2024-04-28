@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import { v4 as uuidv4 } from 'uuid'
 
@@ -9,12 +9,6 @@ const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght }) => {
 	const [content, setContent] = useState('')
 
 	const [infoState, setInfoState] = useState('stan działania')
-
-	useEffect(() => {
-		if (condition) {
-			return () => {}
-		}
-	}, [])
 
 	const handleAddTask = () => {
 		if (content !== '' && tasksLenght.length < 10) {
