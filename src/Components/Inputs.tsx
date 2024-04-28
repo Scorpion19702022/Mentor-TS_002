@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 import styles from './Inputs.module.css'
 import { InputProps, ToDoItem } from '../Types'
 
-const Inputs: React.FC<InputProps> = ({ addToInput }) => {
+const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght }) => {
 	const [content, setContent] = useState('')
 
 	const [infoState, setInfoState] = useState('stan działania')
@@ -25,6 +25,8 @@ const Inputs: React.FC<InputProps> = ({ addToInput }) => {
 
 		setContent('')
 	}
+
+	console.log(tasksLenght.length)
 
 	return (
 		<div className={styles.wrapper}>
