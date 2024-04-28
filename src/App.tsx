@@ -18,9 +18,11 @@ function App() {
 		setTasks(deleteTask)
 	}
 
+	console.log(tasks.length)
+
 	return (
 		<div className={styles.wrapper}>
-			<Inputs addToInput={addTasks} />
+			<Inputs addToInput={addTasks} tasksLenght={tasks} />
 			<Result addToResult={tasks} deleteTask={handleDeleteTask} />
 		</div>
 	)

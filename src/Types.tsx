@@ -6,6 +6,7 @@ export type ToDoItem = {
 
 export type InputProps = {
 	addToInput: (task: ToDoItem) => void
+	tasksLenght: ToDoItem
 }
 
 export type ResultProps = {
