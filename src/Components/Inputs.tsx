@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { v4 as uuidv4 } from 'uuid'
 
@@ -10,8 +10,14 @@ const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght }) => {
 
 	const [infoState, setInfoState] = useState('stan działania')
 
+	useEffect(() => {
+		if (condition) {
+			return () => {}
+		}
+	}, [])
+
 	const handleAddTask = () => {
-		if (content !== '') {
+		if (content !== '' && tasksLenght.length < 10) {
 			const newTask: ToDoItem = {
 				id: uuidv4(),
 				task: content,
@@ -19,14 +25,15 @@ const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght }) => {
 			}
 			addToInput(newTask)
 			setInfoState('dodano prawidłowo')
+			setContent('')
 		} else if (content === '') {
 			setInfoState('musisz wpisać treść')
+		} else if (tasksLenght.length >= 10) {
+			setInfoState('dodano maksymalną ilość zadań')
 		}
 
-		setContent('')
+		// setContent('')
 	}
-
-	console.log(tasksLenght.length)
 
 	return (
 		<div className={styles.wrapper}>
