@@ -20,3 +20,8 @@
 	--color-blue08: #005f7f;
 	--color-blue09: #00394c;
 }
+
+.box_results {
+	display: flex;
+	justify-content: space-between;
+}
