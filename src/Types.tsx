@@ -4,6 +4,10 @@ export type ToDoItem = {
 	isComplete: boolean
 }
 
+export type info = {
+	info: string
+}
+
 export type InputProps = {
 	addToInput: (task: ToDoItem) => void
 	tasksLenght: ToDoItem[]

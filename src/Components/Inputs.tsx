@@ -47,7 +47,7 @@ const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght }) => {
 					Informacja o stanie: <span className={styles.span_info}>{infoState.toUpperCase()}</span>
 				</h4>
 				<h4 className={styles.info_length}>
-					Ilość zadań: <span className={styles.span_length}></span>
+					Ilość zadań: <span className={styles.span_length}>{tasksLenght.length}</span>
 				</h4>
 			</div>
 		</div>
