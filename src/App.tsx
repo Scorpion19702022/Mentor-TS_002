@@ -7,7 +7,7 @@ import { ToDoItem } from './Types'
 function App() {
 	const [tasks, setTasks] = useState<ToDoItem[]>([])
 
-	const [infoDelete, setInfoDelete] = useState<string>('stan działania')
+	const [infoDelete, setInfoDelete] = useState<string>('dupa')
 
 	const addTasks = (task: ToDoItem) => {
 		if (tasks.length < 10) {
@@ -15,19 +15,16 @@ function App() {
 		}
 	}
 
-	const deleteTask = tasks.filter(item => item.id)
-
-	console.log(deleteTask)
 	const handleDeleteTask = (id: string | number) => {
-		// const deleteTask = tasks.filter(item => item.id !== id)
-		if (deleteTask == id) {
-		}
+		const deleteTask = tasks.filter(item => item.id !== id)
 		setTasks(deleteTask)
 
-		// if (deleteTask) {
-		// 	setInfoDelete('usunięto zadanie')
-		// }
+		if (deleteTask) {
+			setInfoDelete('usunięto zadanie')
+		}
 	}
+
+	console.log(infoDelete)
 
 	// useEffect(() => {
 	// 	if (deleteTask) {
