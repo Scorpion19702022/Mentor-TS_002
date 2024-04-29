@@ -8,7 +8,7 @@ import { InputProps, ToDoItem } from '../Types'
 const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) => {
 	const [content, setContent] = useState('')
 
-	const [infoState, setInfoState] = useState('stan działania')
+	const [infoState, setInfoState] = useState(infoDelete)
 
 	const handleAddTask = () => {
 		if (content !== '' && tasksLenght.length < 10) {
@@ -18,15 +18,13 @@ const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) =
 				isComplete: false,
 			}
 			addToInput(newTask)
-			setInfoState(infoDelete)
+			setInfoState('dodano prawidłowo')
 			setContent('')
 		} else if (content === '') {
 			setInfoState('musisz wpisać treść')
 		} else if (tasksLenght.length >= 10) {
 			setInfoState('dodano maksymalną ilość zadań')
 		}
-
-		// setContent('')
 	}
 
 	return (
