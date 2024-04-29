@@ -7,7 +7,7 @@ import { ToDoItem } from './Types'
 function App() {
 	const [tasks, setTasks] = useState<ToDoItem[]>([])
 
-	const [infoDelete, setInfoDelete] = useState<string>('dupa')
+	const [infoDelete, setInfoDelete] = useState<string>('stan działania')
 
 	const addTasks = (task: ToDoItem) => {
 		if (tasks.length < 10) {
