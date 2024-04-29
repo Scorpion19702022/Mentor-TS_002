@@ -7,7 +7,7 @@ import { ToDoItem } from './Types'
 function App() {
 	const [tasks, setTasks] = useState<ToDoItem[]>([])
 
-	const [infoDelete, setInfoDelete] = useState<string>('')
+	const [infoDelete, setInfoDelete] = useState<string>('ble')
 
 	const addTasks = (task: ToDoItem) => {
 		if (tasks.length < 10) {

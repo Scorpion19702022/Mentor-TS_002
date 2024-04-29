@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 import styles from './Inputs.module.css'
 import { InputProps, ToDoItem } from '../Types'
 
-const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght }) => {
+const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) => {
 	const [content, setContent] = useState('')
 
 	const [infoState, setInfoState] = useState('stan działania')
@@ -18,7 +18,7 @@ const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght }) => {
 				isComplete: false,
 			}
 			addToInput(newTask)
-			setInfoState('dodano prawidłowo')
+			setInfoState(infoDelete)
 			setContent('')
 		} else if (content === '') {
 			setInfoState('musisz wpisać treść')
