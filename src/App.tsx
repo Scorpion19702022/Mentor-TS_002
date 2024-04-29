@@ -33,8 +33,6 @@ function App() {
 		if (deleteTask.length === 0) {
 			setInfoDelete('usunięto wszystkie zadania')
 		}
-
-		console.log(deleteTask)
 	}
 
 	// console.log(infoDelete)
