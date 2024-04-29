@@ -25,7 +25,7 @@ function App() {
 
 	return (
 		<div className={styles.wrapper}>
-			<Inputs addToInput={addTasks} tasksLenght={tasks} infoDelete={infoDelete} deleteTask={handleDeleteTask} />
+			<Inputs addToInput={addTasks} tasksLenght={tasks} infoDelete={infoDelete} />
 			<Result addToResult={tasks} deleteTask={handleDeleteTask} />
 		</div>
 	)
