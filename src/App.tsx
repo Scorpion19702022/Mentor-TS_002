@@ -12,6 +12,7 @@ function App() {
 	const addTasks = (task: ToDoItem) => {
 		if (tasks.length < 10) {
 			setTasks([...tasks, task])
+			setInfoDelete('dodano prawidłowo')
 		}
 	}
 
