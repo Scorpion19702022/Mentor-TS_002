@@ -30,12 +30,14 @@ function App() {
 			setInfoDelete('usunięto zadanie')
 		}
 
-		if (tasks.length === 0) {
+		if (deleteTask.length === 0) {
 			setInfoDelete('usunięto wszystkie zadania')
 		}
+
+		console.log(deleteTask)
 	}
 
-	console.log(infoDelete)
+	// console.log(infoDelete)
 
 	// useEffect(() => {
 	// 	if (deleteTask) {
