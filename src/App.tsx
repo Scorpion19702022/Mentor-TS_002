@@ -16,12 +16,22 @@ function App() {
 		}
 	}
 
+	// useEffect(() => {
+	// 	if (tasks.length === 0) {
+	// 		setInfoDelete('usunięto wszystkie zadania')
+	// 	}
+	// }, [tasks.length])
+
 	const handleDeleteTask = (id: string | number) => {
 		const deleteTask = tasks.filter(item => item.id !== id)
 		setTasks(deleteTask)
 
 		if (deleteTask) {
 			setInfoDelete('usunięto zadanie')
+		}
+
+		if (tasks.length === 0) {
+			setInfoDelete('usunięto wszystkie zadania')
 		}
 	}
 
