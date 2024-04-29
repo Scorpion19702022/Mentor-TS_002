@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './App.module.css'
 import Inputs from './Components/Inputs'
 import Result from './Components/Result'
@@ -15,13 +15,25 @@ function App() {
 		}
 	}
 
+	const deleteTask = tasks.filter(item => item.id)
+
+	console.log(deleteTask)
 	const handleDeleteTask = (id: string | number) => {
-		const deleteTask = tasks.filter(item => item.id !== id)
-		setTasks(deleteTask)
-		if (deleteTask) {
-			setInfoDelete('usunięto zadanie')
+		// const deleteTask = tasks.filter(item => item.id !== id)
+		if (deleteTask == id) {
 		}
+		setTasks(deleteTask)
+
+		// if (deleteTask) {
+		// 	setInfoDelete('usunięto zadanie')
+		// }
 	}
+
+	// useEffect(() => {
+	// 	if (deleteTask) {
+	// 		setInfoDelete('usunięto zadanie')
+	// 	}
+	// }, [])
 
 	return (
 		<div className={styles.wrapper}>
