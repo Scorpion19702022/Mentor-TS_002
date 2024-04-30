@@ -8,7 +8,7 @@ import { InputProps, ToDoItem } from '../Types'
 const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) => {
 	const [content, setContent] = useState('')
 
-	// const [infoState, setInfoState] = useState('')
+	const [infoState, setInfoState] = useState(infoDelete)
 
 	const handleAddTask = () => {
 		if (content !== '' && tasksLenght.length < 10) {
@@ -20,9 +20,9 @@ const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) =
 			addToInput(newTask)
 			setContent('')
 		} else if (content === '') {
-			// setInfoState('musisz wpisać treść')
+			setInfoState('musisz wpisać treść')
 		} else if (tasksLenght.length >= 10) {
-			// setInfoState('dodano maksymalną ilość zadań')
+			setInfoState('dodano maksymalną ilość zadań')
 		} else {
 			// setInfoState(infoDelete)
 		}
@@ -43,7 +43,7 @@ const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) =
 			</div>
 			<div className={styles.box_info}>
 				<h4 className={styles.info_state}>
-					Informacja o stanie: <span className={styles.span_info}>{infoDelete.toUpperCase()}</span>
+					Informacja o stanie: <span className={styles.span_info}>{infoState.toUpperCase()}</span>
 				</h4>
 				<h4 className={styles.info_length}>
 					Ilość zadań: <span className={styles.span_length}>{tasksLenght.length}</span>
