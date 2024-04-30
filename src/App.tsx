@@ -10,10 +10,10 @@ function App() {
 	const [infoDelete, setInfoDelete] = useState<string>('stan działania')
 
 	const addTasks = (task: ToDoItem) => {
-		if (tasks.length <= 9) {
+		if (tasks.length < 10) {
 			setTasks([...tasks, task])
-			// setInfoDelete('dodano prawidłowo')
-		} else if (tasks.length >= 6) {
+			setInfoDelete('dodano prawidłowo')
+		} else {
 			setInfoDelete('dodano maksymalną ilość zadań')
 		}
 	}

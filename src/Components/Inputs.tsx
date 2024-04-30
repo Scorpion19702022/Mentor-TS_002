@@ -8,8 +8,7 @@ import { InputProps, ToDoItem } from '../Types'
 const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) => {
 	const [content, setContent] = useState('')
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	const [infoState, setInfoState] = useState(infoDelete)
+	// const [infoState, setInfoState] = useState(infoDelete)
 
 	console.log(infoDelete)
 
