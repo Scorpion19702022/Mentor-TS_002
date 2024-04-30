@@ -8,12 +8,13 @@ import { InputProps, ToDoItem } from '../Types'
 const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) => {
 	const [content, setContent] = useState('')
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [infoState, setInfoState] = useState(infoDelete)
 
 	console.log(infoDelete)
 
 	const handleAddTask = () => {
-		if (content !== '' && tasksLenght.length < 10) {
+		if (content !== '') {
 			const newTask: ToDoItem = {
 				id: uuidv4(),
 				task: content,
@@ -21,8 +22,6 @@ const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) =
 			}
 			addToInput(newTask)
 			setContent('')
-		} else if (content === '') {
-			setInfoState('musisz wpisać treść')
 		}
 	}
 
