@@ -14,7 +14,11 @@ function App() {
 			setTasks([...tasks, task])
 			setInfoDelete('dodano prawidłowo')
 		}
+
+		console.log(tasks)
 	}
+
+	// console.log(tasks[1].task)
 
 	// useEffect(() => {
 	// 	if (tasks.length === 0) {
