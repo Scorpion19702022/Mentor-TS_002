@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './App.module.css'
 import Inputs from './Components/Inputs'
 import Result from './Components/Result'
@@ -13,18 +13,12 @@ function App() {
 		if (tasks.length < 10) {
 			setTasks([...tasks, task])
 			setInfoDelete('dodano prawidłowo')
+		} else if (tasks.length >= 10) {
+			setInfoDelete('dodano maksymalną ilość zadań')
 		}
 
 		console.log(tasks)
 	}
-
-	// console.log(tasks[1].task)
-
-	// useEffect(() => {
-	// 	if (tasks.length === 0) {
-	// 		setInfoDelete('usunięto wszystkie zadania')
-	// 	}
-	// }, [tasks.length])
 
 	const handleDeleteTask = (id: string | number) => {
 		const deleteTask = tasks.filter(item => item.id !== id)
