@@ -10,6 +10,8 @@ const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) =
 
 	const [infoState, setInfoState] = useState(infoDelete)
 
+	console.log(infoDelete)
+
 	const handleAddTask = () => {
 		if (content !== '' && tasksLenght.length < 10) {
 			const newTask: ToDoItem = {
