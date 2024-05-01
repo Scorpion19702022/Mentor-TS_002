@@ -8,7 +8,6 @@ export type InputProps = {
 	addToInput: (task: ToDoItem) => void
 	tasksLenght: ToDoItem[]
 	infoDelete: string
-	contentIn: ToDoItem
 }
 
 export type ResultProps = {
