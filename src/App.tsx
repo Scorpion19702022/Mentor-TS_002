@@ -11,10 +11,14 @@ function App() {
 
 	// const [contentIn, setContentIn] = useState<ToDoItem>([])
 
-	console.log(tasks)
+	// console.log(tasks)
+
+	const findTask = tasks.find(item => item.task)
+
+	console.log(findTask?.task)
 
 	const addTasks = (task: ToDoItem) => {
-		if (tasks.length < 10) {
+		if (tasks.length < 10 && findTask?.task !== '') {
 			setTasks([...tasks, task])
 			setInfoDelete('dodano prawidłowo')
 		} else {

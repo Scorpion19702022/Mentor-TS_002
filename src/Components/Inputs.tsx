@@ -20,6 +20,16 @@ const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) =
 			addToInput(newTask)
 			setContent('')
 		}
+
+		// if (content !== '') {
+		// 	const newTask: ToDoItem = {
+		// 		id: uuidv4(),
+		// 		task: content,
+		// 		isComplete: false,
+		// 	}
+		// 	addToInput(newTask)
+		// 	setContent('')
+		// }
 	}
 
 	return (
