@@ -11,6 +11,10 @@ function App() {
 
 	const [content, setContent] = useState('')
 
+	const handleChangeContent = e => {
+		setContent(e.target.value)
+	}
+
 	const addTasks = (task: ToDoItem) => {
 		if (tasks.length < 10) {
 			setTasks([...tasks, task])
