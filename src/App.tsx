@@ -9,10 +9,8 @@ function App() {
 
 	const [infoDelete, setInfoDelete] = useState<string>('stan działania')
 
-	const [inContent, setIncontent] = useState('')
-
 	const addTasks = (task: ToDoItem) => {
-		if (tasks.length < 10 && inContent !== '') {
+		if (tasks.length < 10) {
 			setTasks([...tasks, task])
 			setInfoDelete('dodano prawidłowo')
 		} else {
@@ -43,7 +41,7 @@ function App() {
 
 	return (
 		<div className={styles.wrapper}>
-			<Inputs addToInput={addTasks} tasksLenght={tasks} infoDelete={infoDelete} inContent={Content} />
+			<Inputs addToInput={addTasks} tasksLenght={tasks} infoDelete={infoDelete} />
 			<Result addToResult={tasks} deleteTask={handleDeleteTask} />
 		</div>
 	)
