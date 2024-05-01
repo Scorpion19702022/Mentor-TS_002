@@ -5,22 +5,23 @@ import { v4 as uuidv4 } from 'uuid'
 import styles from './Inputs.module.css'
 import { InputProps, ToDoItem } from '../Types'
 
-const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete, content }) => {
-	// const [content, setContent] = useState('')
+const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) => {
+	const [content, setContent] = useState('')
 
 	// const [infoState, setInfoState] = useState(infoDelete)
 
 	console.log(infoDelete)
 
 	const handleAddTask = () => {
-		const newTask: ToDoItem = {
-			id: uuidv4(),
-			task: content,
-			isComplete: false,
 		if (content !== '') {
+			const newTask: ToDoItem = {
+				id: uuidv4(),
+				task: content,
+				isComplete: false,
 			}
+			addToInput(newTask)
+			setContent('')
 		}
-		addToInput(newTask)
 	}
 
 	return (
@@ -28,8 +29,7 @@ const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete, con
 			<div className={styles.box_inputs}>
 				<div className={styles.inputs}>
 					<label className={styles.label}>Wpisz treść:</label>
-					{/* <input className={styles.input} type='text' value={content} onChange={e => setContent(e.target.value)} /> */}
-					<input className={styles.input} type='text' value={content} />
+					<input className={styles.input} type='text' value={content} onChange={e => setContent(e.target.value)} />
 				</div>
 				<div className={styles.btns}>
 					<button className={styles.btn} onClick={handleAddTask}>

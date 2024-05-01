@@ -9,12 +9,6 @@ function App() {
 
 	const [infoDelete, setInfoDelete] = useState<string>('stan działania')
 
-	const [content, setContent] = useState('')
-
-	const handleChangeContent = e => {
-		setContent(e.target.value)
-	}
-
 	const addTasks = (task: ToDoItem) => {
 		if (tasks.length < 10) {
 			setTasks([...tasks, task])
@@ -47,7 +41,7 @@ function App() {
 
 	return (
 		<div className={styles.wrapper}>
-			<Inputs addToInput={addTasks} tasksLenght={tasks} infoDelete={infoDelete} content={content} />
+			<Inputs addToInput={addTasks} tasksLenght={tasks} infoDelete={infoDelete} />
 			<Result addToResult={tasks} deleteTask={handleDeleteTask} />
 		</div>
 	)
