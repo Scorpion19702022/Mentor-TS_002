@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 import styles from './Inputs.module.css'
 import { InputProps, ToDoItem } from '../Types'
 
-const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) => {
+const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete, contentIn }) => {
 	const [content, setContent] = useState('')
 
 	// const [infoState, setInfoState] = useState(infoDelete)
@@ -13,7 +13,7 @@ const Inputs: React.FC<InputProps> = ({ addToInput, tasksLenght, infoDelete }) =
 	console.log(infoDelete)
 
 	const handleAddTask = () => {
-		if (content !== '') {
+		if (contentIn.task !== '') {
 			const newTask: ToDoItem = {
 				id: uuidv4(),
 				task: content,

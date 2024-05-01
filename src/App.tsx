@@ -9,8 +9,10 @@ function App() {
 
 	const [infoDelete, setInfoDelete] = useState<string>('stan działania')
 
+	const [contentIn, setContentIn] = useState<ToDoItem>([])
+
 	const addTasks = (task: ToDoItem) => {
-		if (tasks.length < 10) {
+		if (tasks.length < 10 && contentIn.task !== '') {
 			setTasks([...tasks, task])
 			setInfoDelete('dodano prawidłowo')
 		} else {
