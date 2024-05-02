@@ -18,10 +18,10 @@ function App() {
 	console.log(!findTask?.task)
 
 	const addTasks = (task: ToDoItem) => {
-		if (tasks.length < 10 && findTask?.task === '') {
+		if (tasks.length < 10 && findTask?.task !== '') {
 			setTasks([...tasks, task])
 			setInfoDelete('dodano prawidłowo')
-		} else if (tasks.length < 10 && findTask?.task) {
+		} else if (findTask?.task) {
 			setInfoDelete('musisz wpisać zadanie')
 		} else {
 			setInfoDelete('dodano maksymalną ilość zadań')
