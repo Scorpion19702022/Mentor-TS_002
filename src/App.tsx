@@ -13,17 +13,17 @@ function App() {
 
 	// console.log(tasks)
 
-	const findTask = tasks.find(item => item.task)
+	// const findTask = tasks.find(item => item.task)
 
 	// console.log(!findTask?.task)
 
 	const addTasks = (task: ToDoItem) => {
-		if (tasks.length < 10 && findTask?.task !== '') {
+		if (tasks.length < 10 && task.task !== '') {
 			setTasks([...tasks, task])
 			setInfoDelete('dodano prawidłowo')
-		} else if (!findTask?.task) {
+		} else if (tasks.length < 10 && task.task === '') {
 			setInfoDelete('musisz wpisać zadanie')
-		} else {
+		} else if (tasks.length >= 10) {
 			setInfoDelete('dodano maksymalną ilość zadań')
 		}
 	}
@@ -41,7 +41,7 @@ function App() {
 		}
 	}
 
-	console.log(infoDelete)
+	// console.log(infoDelete)
 
 	// useEffect(() => {
 	// 	if (deleteTask) {
