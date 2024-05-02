@@ -4,10 +4,15 @@ export type ToDoItem = {
 	isComplete: boolean
 }
 
+export type Content = {
+	content: ToDoItem[]
+}
+
 export type InputProps = {
 	addToInput: (task: ToDoItem) => void
 	tasksLenght: ToDoItem[]
 	infoDelete: string
+	findTask: Content
 }
 
 export type ResultProps = {
